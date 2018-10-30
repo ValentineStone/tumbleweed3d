@@ -5,17 +5,19 @@ CC_LIBS = -Llib -lglew32s -lglfw3 -lopengl32
 CC_LINKER = 
  
 # File names
-EXEC = build/tumbleweed.exe
+EXEC = ./build/tumbleweed.exe
 SOURCES = $(wildcard src/*.cpp) $(wildcard src/**/*.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
 
 ifdef ComSpec
-    RM = cmd /c del
+		SH = @cmd /c
+    RM = del
 		EXEC := $(subst /,\,$(EXEC))
 		OBJECTS := $(subst /,\,$(OBJECTS))
 		CC_LIBS += -lGdi32
-		CC_LINKER += -mwindows
+		#CC_LINKER += -mwindows
 else
+		SH =
     RM = rm -f
 endif 
  
@@ -30,4 +32,8 @@ $(EXEC): $(OBJECTS)
  
 # To remove generated files
 clean:
-	$(RM) $(EXEC) $(OBJECTS)
+	$(SH) $(RM) $(EXEC) $(OBJECTS)
+
+# To remove generated files
+log:
+	$(SH) echo $(OBJECTS)
