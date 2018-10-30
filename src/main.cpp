@@ -57,6 +57,10 @@ int main() {
 		-0.08, -0.55,
 		0.08, -0.55,
 		0, -0.9,
+		
+		-0.08,  0.9,
+		 0.0,  0.55,
+		 0.08,  0.9,
 	};
 
 	unsigned int buffer;
@@ -85,7 +89,7 @@ int main() {
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glDrawArrays(GL_TRIANGLES, 0, 12);
+		glDrawArrays(GL_TRIANGLES, 0, sizeof(vertices) / sizeof(float));
 
 		glfwSwapBuffers(window);
 
