@@ -1,1 +1,1 @@
-@build\tumbleweed.exe
+@build\tumbleweed3d.exe

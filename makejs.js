@@ -21,7 +21,7 @@ const getFiles = (dir, filelist) => {
 
 const cppFiles = getFiles('src')
 const inputFiles = cppFiles.map(v => '"' + v + '"').join(' ')
-const outputFile = path.resolve('build', 'tumbleweed.exe')
+const outputFile = path.resolve('build', 'tumbleweed3d.exe')
 
 const command = `g++ ${inputFiles} -o ${outputFile}`
 

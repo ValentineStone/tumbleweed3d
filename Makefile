@@ -5,7 +5,7 @@ CC_LIBS = -Llib -lglew32s -lglfw3 -lopengl32
 CC_LINKER = 
  
 # File names
-EXEC = ./build/tumbleweed.exe
+EXEC = ./build/tumbleweed3d.exe
 SOURCES = $(wildcard src/*.cpp) $(wildcard src/**/*.cpp)
 OBJECTS = $(SOURCES:.cpp=.o)
 
